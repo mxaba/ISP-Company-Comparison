@@ -3,6 +3,8 @@ body{
     align-items: center;
     background-color: #FFD55A;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -26,12 +28,14 @@ h2{
     background-color: white;
 }
 .footer{
+    margin-top: auto;
     background-color: #317773;
 }
 .graph-display{
     border-radius: 20px;
     background-color: teal;
+    color: white;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1.5%;
     /* margin-left: 15%; */
 }
