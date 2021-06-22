@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 function dataSet() {
   const companyObject = [{
-          companyName: "telkom",
+          companyName: "Telkom",
           speed: 45,
           price: 560,
           coverage: 456,
@@ -11,7 +11,7 @@ function dataSet() {
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "vodacom",
+          companyName: "Vodacom",
           speed: 90,
           price: 660,
           coverage: 600,
@@ -21,7 +21,7 @@ function dataSet() {
           area: "Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "mtn",
+          companyName: "Mtn",
           speed: 75,
           price: 598,
           coverage: 798,
@@ -31,7 +31,7 @@ function dataSet() {
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "rain",
+          companyName: "Rain",
           speed: 45,
           price: 798,
           coverage: 123,
@@ -41,7 +41,7 @@ function dataSet() {
           area: "Western Suburbs",
       },
       {
-          companyName: "mweb",
+          companyName: "Mweb",
           speed: 90,
           price: 890,
           coverage: 398,
@@ -51,7 +51,7 @@ function dataSet() {
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "afrihost",
+          companyName: "Afrihost",
           speed: 89,
           price: 678,
           coverage: 987,
@@ -61,7 +61,7 @@ function dataSet() {
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "neotel",
+          companyName: "Neotel",
           speed: 10,
           price: 167,
           coverage: 2,
@@ -71,7 +71,7 @@ function dataSet() {
           area: "Atlantic Seaboard",
       },
       {
-          companyName: "techtel",
+          companyName: "Techtel",
           speed: 50,
           price: 567,
           coverage: 400,
@@ -80,7 +80,7 @@ function dataSet() {
           instructions: 'Yes',
           area: "Belhar, Bellville, Brackenfell, Bothasig, Brooklyn, Delft, Durbanville, Edgemead, Elsie's River, Goodwood, Kensington, Kraaifontein, Kuils River,Maitland,Milnerton",
       }, {
-          companyName: "tooMuchWifi",
+          companyName: "TooMuchWifi",
           speed: 40,
           price: 350,
           coverage: 600,
@@ -90,7 +90,7 @@ function dataSet() {
           area: "Bishop Lavis, Bonteheuwel, Crawford, Crossroads, Epping, Gugulethu, Hanover Park, Kalksteenfontein, Khayelitsha, Langa, Lavender Hill, Manenberg Mitchells Plain, Nyanga, Ottery, Pelican Park, Philippi, Samora Machel, Strandfontein, Valhalla Park, Vrygrond",
       },
       {
-          companyName: "technet",
+          companyName: "Technet",
           speed: 39,
           price: 367,
           coverage: 2,
@@ -99,7 +99,7 @@ function dataSet() {
           instructions: 'No',
           area: "Bo-Kaap (Malay Quarter), Devil's Peak Estate, De Waterkant, Foreshore, Gardens, Higgovale, Lower Vrede (District Six), Oranjezicht, Salt River,Schotsche Kloof, Tamboerskloof, University Estate, Vredehoek, Walmer Estate (District Six), Woodstock (including Upper Woodstock), Zonnebloem (District Six)",
       }, {
-          companyName: "vannila",
+          companyName: "Vannila",
           speed: 45,
           price: 798,
           coverage: 123,
@@ -110,7 +110,7 @@ function dataSet() {
 
       },
       {
-          companyName: "hello",
+          companyName: "Hello",
           speed: 30,
           price: 300,
           coverage: 10,
@@ -121,7 +121,7 @@ function dataSet() {
 
       },
       {
-          companyName: "netweb",
+          companyName: "Netweb",
           speed: 50,
           price: 798,
           coverage: 600,
@@ -132,7 +132,7 @@ function dataSet() {
 
       },
       {
-          companyName: "axxex",
+          companyName: "Axxex",
           speed: 30,
           price: 298,
           coverage: 123,
@@ -142,7 +142,7 @@ function dataSet() {
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       },
       {
-          companyName: "cloud",
+          companyName: "Icloud",
           speed: 60,
           price: 698,
           coverage: 123,
@@ -152,7 +152,7 @@ function dataSet() {
           area: "Bellville, Brackenfell, Bothasig, Brooklyn, Delft, Durbanville, Edgemead, Elsie's River, Goodwood, Kensington, Kraaifontein, Kuils River,Maitland,Milnerton",
       },
       {
-          companyName: "dodo",
+          companyName: "Dodo",
           speed: 10,
           price: 467,
           coverage: 200,
@@ -162,7 +162,7 @@ function dataSet() {
           area: "Devil's Peak Estate, Foreshore, Gardens, Higgovale, Lower Vrede (District Six), Oranjezicht, Salt River,Schotsche Kloof, Tamboerskloof, University Estate, Vredehoek, Woodstock (including Upper Woodstock), Zonnebloem (District Six)",
       },
       {
-          companyName: "line",
+          companyName: "Line",
           speed: 60,
           price: 167,
           coverage: 100,
@@ -171,7 +171,7 @@ function dataSet() {
           instructions: 'No',
           area: "Brackenfell, Bothasig, Brooklyn, Delft, Durbanville, Edgemead, Elsie's River, Goodwood, Kensington, Kraaifontein, Kuils River,Maitland,Milnerton",
       }, {
-          companyName: "blue",
+          companyName: "Blue",
           speed: 10,
           price: 367,
           coverage: 90,
@@ -180,7 +180,7 @@ function dataSet() {
           instructions: 'Yes',
           area: "Brackenfell, Bothasig, Brooklyn, Delft, Durbanville, Edgemead, Elsie's River, Goodwood, Kensington, Kraaifontein, Kuils River,Maitland,Milnerton",
       }, {
-          companyName: "dot",
+          companyName: "Dot",
           speed: 10,
           price: 300,
           coverage: 30,
@@ -189,7 +189,7 @@ function dataSet() {
           instructions: 'No',
           area: "Atlantic Seaboard, Klipfontein District (Old Cape Flats), City Bowl, Helderberg, Northern Suburbs, South Peninsula, Southern Suburbs, Western Suburbs",
       }, {
-          companyName: "open serve",
+          companyName: "Open serve",
           speed: 40,
           price: 467,
           coverage: 20,

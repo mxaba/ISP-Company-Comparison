@@ -77,3 +77,23 @@ h2{
     font-weight: bold;
     color: #363f3d;
 }
+
+h2 {
+    font-size: 3vw;
+    margin-top: 1%;
+    color: rgb(10, 10, 10);
+    text-shadow: 4px 4px 0px white;
+    background: none;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+}
+  
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  
+  100% {
+      opacity: 1;
+    }
+}

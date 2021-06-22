@@ -12,12 +12,12 @@
   <link rel="stylesheet" href="./css/skeleton.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <title>Document</title>
+  <title>Home | ISP Company</title>
 
   <script type="text/x-template" class="ISPdata">
         {{#each company}}
         <tr>
-          <td>{{this.companyName}}</td>
+          <td><strong>{{this.companyName}}</strong></td>
           <td>{{this.speed}}</td>
           <td>{{this.price}}</td>
           <td>{{this.coverage}}</td>
@@ -25,6 +25,7 @@
           <td>{{this.users}}</td>
           <td>{{this.instructions}}</td>
           <td>{{this.area}}</td>
+          <td> <button value={{this.companyName}} onclick="showGrapth(this.value)" >Graph</button> </td>
         </tr>
         {{/each}}
     </script>
@@ -52,7 +53,7 @@
         <table class="styled-table">
           <thead>
             <tr>
-              <th>Company Name</th>
+              <th>ISP Company</th>
               <th>Speed</th>
               <th>Price</th>
               <th>Coverage</th>
@@ -60,6 +61,7 @@
               <th>Users</th>
               <th>Instructions</th>
               <th>Surbubs</th>
+              <th>Virsual-Data</th>
             </tr>
           </thead>
           <tbody class="userData">
