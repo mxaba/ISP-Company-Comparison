@@ -12,8 +12,8 @@ var data = instanceFun.getCompanyData()
 function printCompnanies(data){
     data.forEach(element =>{
         userDataDisplay.innerHTML += `
-        <tr>
-              <td>${element.companyName}</td>
+        <tr class="active-row">
+              <td><em> <strong>${element.companyName.charAt(0).toUpperCase() + element.companyName.slice(1).toLowerCase()}</strong><em></td>
               <td>${element.speed}</td>
               <td>${element.price}</td>
               <td>${element.coverage}</td>
