@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <link rel="stylesheet" href="./css/skeleton.css">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/skeleton.css">
-  <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <title>Document</title>
 
-  <script type="text/x-template" class="ISPdata">
+    <script type="text/x-template" class="ISPdata">
         {{#each company}}
         <tr>
           <td>{{this.companyName}}</td>
@@ -30,33 +31,56 @@
 
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="row">
+        <div class="header">
+            <h2>ISP Company Comparison</h2>
+        </div>
 
-      <div class="twelve">
-        <table>
-          <tr>
-            <th>Company Name</th>
-            <th>Speed</th>
-            <th>Price</th>
-            <th>Coverage</th>
-            <th>Date</th>
-            <th>Users</th>
-            <th>Instructions</th>
-            <th>Surbubs</th>
-          </tr>
-          <tbody class="userData">
+        <div class="searchBar">
+            <!-- <label for="search">Search:</label> -->
+            <label for="search">Search: <input type="search" id="search" name="search" placeholder="please enter your search"></label>
+            <!-- <input type="submit"> -->
+        </div>
 
-          </tbody>
-        </table>
-      </div>
+        <div class="row row-table">
+
+            <div class="twelve">
+                <table>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Speed</th>
+                        <th>Price</th>
+                        <th>Coverage</th>
+                        <th>Date</th>
+                        <th>Users</th>
+                        <th>Instructions</th>
+                        <th>Surbubs</th>
+                    </tr>
+                    <tbody class="userData">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="graph">
+            <button class="graph-display">Graph Display</button>
+        </div>
+
+        <div class="footer">
+            footer   
+        </div>
+
     </div>
-  </div>
 
-  <script src="./js/dataSet.js"></script>
-  <script src="./js/js-function/isp-functionality.js"></script>
-  <script src="./js/js-dom/getData.js"></script>
+    <script src="./js/dataSet.js"></script>
+    <script src="./js/js-function/isp-functionality.js"></script>
+    <script src="./js/js-dom/getData.js"></script>
 </body>
+
+<!-- <div class="footer">
+    footer   
+</div> -->
 
 </html>
