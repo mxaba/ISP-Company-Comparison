@@ -1,0 +1,42 @@
+body{
+    /* box-sizing: border-box; */
+    align-items: center;
+    background-color: #FFD55A;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    /* background-image: linear-gradient(to bottom right , rgb(42, 243, 59), rgb(243, 139, 42),rgb(109, 148, 231)); */
+    /* margin-top: 2%;
+    margin-bottom: 2%; */
+    background-color: #317773;
+}
+h2{
+    text-align: center;
+    color: #40e271;
+    /* text-shadow: 2px 2px rgb(247, 244, 245); */
+    font-weight: bold;
+}
+.styleBar{
+    text-align: center;
+}
+.row-table{
+    height: 75vh;
+    overflow: auto;
+    background-color: white;
+}
+.footer{
+    margin-top: auto;
+    background-color: #317773;
+}
+.graph-display{
+    border-radius: 20px;
+    background-color: teal;
+    color: white;
+    text-align: center;
+    margin-top: 1.5%;
+    /* margin-left: 15%; */
+}
+
