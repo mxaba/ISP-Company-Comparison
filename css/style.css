@@ -153,4 +153,17 @@ h2 {
 .add-heading h5{
     text-align: center;
 }
+
+.addData {
+    background-color: teal;
+    color: wheat;
+}
+
+.datainaside {
+    height: 75vh;
+}
+
+.red {
+    background-color: white;
+}
   
