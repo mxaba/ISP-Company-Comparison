@@ -16,7 +16,7 @@ function ISPFunction(){
     }
 
     function generateData(){
-        return Math.floor(Math.random()*(999-0+1)+0)
+        return Math.floor(Math.random()*(45-0+1)+0)
     }
 
     function sortData(){
@@ -24,7 +24,7 @@ function ISPFunction(){
         const data = companyData.filter(elem => {
             graphData.push({
                 label: elem.companyName,
-                data: [elem.price, generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData()],
+                data: [generateData(), generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData()],
                 borderColor: elem.color,
                 fill: false
             })
