@@ -81,8 +81,9 @@ h2{
 h2 {
     font-size: 3vw;
     margin-top: 1%;
-    color: rgb(10, 10, 10);
-    text-shadow: 4px 4px 0px white;
+    /* color: rgb(10, 10, 10); */
+    color: rgb(252, 0, 0);
+    text-shadow: 4px 4px 0px rgb(255, 255, 255);
     background: none;
     mix-blend-mode: screen;
     animation: fadeIn 2.5s linear forwards;
@@ -136,4 +137,20 @@ h2 {
     text-decoration: none;
     cursor: pointer;
   }
+
+.add-heading .submit{
+    background-color: teal;
+    color: white;
+    font-size: 15px;
+}  
+
+.add-heading .Company-add{
+    text-align: center;
+    height: 80vh;
+    overflow: scroll;
+    padding-bottom: 2%;
+}
+.add-heading h5{
+    text-align: center;
+}
   
