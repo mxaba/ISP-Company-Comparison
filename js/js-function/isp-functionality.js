@@ -3,6 +3,7 @@ function ISPFunction(){
     let graphData = []
 
     var companyData = dataSet()
+    var dataCapured = []
 
     function getCompanyData(){
         return companyData
@@ -10,31 +11,73 @@ function ISPFunction(){
 
     function filterFunction(name){
         const dataFiltered = companyData.filter(elem => {
-            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.instructions.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || parseFloat(elem.price) < parseFloat(name) 
+            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.router.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || elem.price.toLowerCase().includes(name.toLowerCase()) 
         })
         return dataFiltered
     }
 
-    function generateData(){
-        return Math.floor(Math.random()*(45-0+1)+0)
+    function filterGraphFunction(name){
+        const dataFiltered = dataCapured.filter(elem => {
+            return elem.companyName.toLowerCase().includes(name) || elem.location.toLowerCase().includes(name) 
+        })
+        return dataFiltered
     }
 
-    function sortData(){
+    function getRandomNumber(low, high) {
+        var r = Math.floor(Math.random() * (high - low + 1)) + low;
+        return r;
+      }
+
+    function getRandomColor() {
+        var characters = "0123456789ABCDEF";
+        var color = '#';
+      
+        for (var i = 0; i < 6; i++) {
+          color += characters[getRandomNumber(0, 15)];
+        }
+        
+        return color;
+      }
+
+    function graDataDisplay(){
         graphData = []
-        const data = companyData.filter(elem => {
+        const data = dataCapured.filter(elem => {
             graphData.push({
-                label: elem.companyName,
-                data: [generateData(), generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData()],
-                borderColor: elem.color,
-                fill: false
+                label: elem.companyName + ' @ '+ elem.location,
+                hidden: elem.hidden,
+                data: elem.speed,
+                borderColor: getRandomColor(),
+                fill: true
             })
             return ''
         })
         return graphData
     }
 
+    function getDataCapured(){
+        return dataCapured
+    }
+
+    function setDataCapured(name){
+        dataCapured = name
+    }
+
+    function addDataFunction(objectPassed){
+        dataCapured.push({
+            companyName: objectPassed.companyName,
+            hidden: true,
+            day: [objectPassed.morning, objectPassed.afternoon, objectPassed],
+            speed: [objectPassed.morningspeed, objectPassed.afternoonspeed, objectPassed.eveningspeed],
+            location: objectPassed.placeentered
+        })
+    }
+
     return {
-        sortData,
+        filterGraphFunction,
+        addDataFunction,
+        setDataCapured,
+        getDataCapured,
+        graDataDisplay,
         getCompanyData,
         filterFunction
     }
