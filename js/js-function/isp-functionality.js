@@ -8,7 +8,7 @@ function ISPFunction(){
 
     function filterFunction(name){
         const dataFiltered = companyData.filter(elem => {
-            return elem.companyName.includes(name) || elem.instructions.includes(name) || elem.area.includes(name) || Number(elem.price) <= Number(name) 
+            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.instructions.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || parseFloat(elem.price) < parseFloat(name) 
         })
         return dataFiltered
     }
