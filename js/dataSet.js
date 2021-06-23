@@ -9,7 +9,7 @@ function dataCal(){
         day: ["Morning", "Afternoon", "Evening"],
         speed: [25, 50, 100],
         location: "Belhar",
-        hidden: true
+        hidden: false
     }]
 
     return objectData
