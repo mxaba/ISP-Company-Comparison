@@ -1,5 +1,7 @@
 function ISPFunction(){
 
+    let graphData = []
+
     var companyData = dataSet()
 
     function getCompanyData(){
@@ -13,7 +15,12 @@ function ISPFunction(){
         return dataFiltered
     }
 
+    function genMath(){
+        return Math.floor(Math.random()*(999-0+1)+0)
+    }
+
     return {
+        genMath,
         getCompanyData,
         filterFunction
     }

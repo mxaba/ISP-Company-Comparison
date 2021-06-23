@@ -19,10 +19,11 @@ function printCompnanies(data) {
 
 printCompnanies(data)
 
+console.log(instanceFun.genMath())
+
 function searchDetails() {
     var results = instanceFun.filterFunction(search.value)
     printCompnanies(results)
-    // printCompnanies(results)
 }
 
 // When the user clicks the button, open the modal 
@@ -42,7 +43,7 @@ window.onclick = function (event) {
 
 function showGrapth() {
 
-    var xValues = ['0%', '10%', '20%', '30%', '40%', '50%', '70%', '80%', '90%', '100%'];
+    var xValues = ['', 'Speed', 'Users', 'Coverage', 'Price'];
 
     new Chart("myChart", {
         type: "line",
@@ -50,7 +51,7 @@ function showGrapth() {
             labels: xValues,
             datasets: [{
                 labeal: "Name",
-                data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                data: [,860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
                 borderColor: "red",
                 fill: true
             }, {
