@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/simple-grid.css">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/skeleton.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -21,7 +22,7 @@
         <tr>
           <td><strong>{{this.companyName}}</strong></td>
           <td>{{this.speed}}</td>
-          <td>{{this.price}}</td>
+          <td>R {{this.price}}</td>
           <td>{{this.coverage}}</td>
           <td>{{this.date}}</td>
           <td>{{this.users}}</td>
@@ -47,40 +48,48 @@
           placeholder="please enter your search"></label>
       <!-- <input type="submit"> -->
     </div>
-    
-    <div class="row row-table">
+    <div class="row">
 
-      <div class="twelve column">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>ISP Company</th>
-              <th>Speed</th>
-              <th>Price</th>
-              <th>Coverage</th>
-              <th>Date</th>
-              <th>Users</th>
-              <th>Instructions</th>
-              <th>Surbubs</th>
-            </tr>
-          </thead>
-          <tbody class="userData">
 
-          </tbody>
-        </table>
-      </div>
+      <div class="col-7 row-table">
 
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <canvas id="myChart" style="width:100%;"></canvas>
+
+        <div class="column">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>ISP Company</th>
+                <th>Line Speed</th>
+                <th>Price p/m</th>
+                <th>Coverage</th>
+                <th>Date Established</th>
+                <th>Users</th>
+                <th>Installation included</th>
+                <th>Surbubs</th>
+              </tr>
+            </thead>
+            <tbody class="userData">
+
+            </tbody>
+          </table>
         </div>
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <canvas id="myChart" style="width:100%;"></canvas>
+          </div>
+        </div>
+
       </div>
 
+      <div class="col-5 row-table">
+
+      </div>
     </div>
     <div class="row">
       <div class="six column  graph">
-        <button class="graph-display" >Graph Display</button>
+        <button class="graph-display">Graph Display</button>
         <button class="graph-display" id="myBtn">Improvements of company</button>
       </div>
     </div>

@@ -15,12 +15,26 @@ function ISPFunction(){
         return dataFiltered
     }
 
-    function genMath(){
+    function generateData(){
         return Math.floor(Math.random()*(999-0+1)+0)
     }
 
+    function sortData(){
+        graphData = []
+        const data = companyData.filter(elem => {
+            graphData.push({
+                label: elem.companyName,
+                data: [elem.price, generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData(),generateData(), generateData(), generateData(), generateData(),generateData(), generateData()],
+                borderColor: elem.color,
+                fill: false
+            })
+            return ''
+        })
+        return graphData
+    }
+
     return {
-        genMath,
+        sortData,
         getCompanyData,
         filterFunction
     }

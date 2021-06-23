@@ -19,7 +19,7 @@ function printCompnanies(data) {
 
 printCompnanies(data)
 
-console.log(instanceFun.genMath())
+console.log(instanceFun.sortData())
 
 function searchDetails() {
     var results = instanceFun.filterFunction(search.value)
@@ -43,26 +43,13 @@ window.onclick = function (event) {
 
 function showGrapth() {
 
-    var xValues = ['', 'Speed', 'Users', 'Coverage', 'Price'];
+    var xValues = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     new Chart("myChart", {
         type: "line",
         data: {
             labels: xValues,
-            datasets: [{
-                labeal: "Name",
-                data: [,860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
-                borderColor: "red",
-                fill: true
-            }, {
-                data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
-                borderColor: "green",
-                fill: true
-            }, {
-                data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
-                borderColor: "blue",
-                fill: true
-            }]
+            datasets: instanceFun.sortData()
         },
         options: {
             legend: { display: true }
