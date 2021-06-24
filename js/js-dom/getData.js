@@ -76,7 +76,8 @@ function showGrapth() {
                 }
             }
         });
-    } else if(instanceFun.filterGraphFunction(seachGra).length != 0) {
+    }
+    if(seachGra != "" && instanceFun.filterGraphFunction(seachGra).length != 0) {
         instanceFun.setValueOfPie(seachGra)
         var shift = instanceFun.filterPieFunction()
 
