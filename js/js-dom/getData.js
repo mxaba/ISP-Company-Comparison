@@ -1,4 +1,5 @@
 const userDataDisplay = document.querySelector(".userData");
+const addDataElement = document.querySelector(".addData");
 const search = document.getElementById("search");
 const ISPdataElement = document.querySelector(".ISPdata").innerHTML;
 const ISPdataTemplate = Handlebars.compile(ISPdataElement);
@@ -11,6 +12,17 @@ const instanceFun = ISPFunction();
 
 // userDataDisplay.innerHTML = ISPdataTemplate({ company : instanceFun.getCompanyData() })
 
+let arrayGraph = []
+
+if (localStorage['graph']) {
+    arrayGraph = JSON.parse(localStorage.getItem("graph"));
+} else {
+    // eslint-disable-next-line no-undef
+    arrayGraph = dataCal();
+}
+
+instanceFun.setDataCapured(arrayGraph)
+
 var data = instanceFun.getCompanyData()
 
 function printCompnanies(data) {
@@ -19,7 +31,7 @@ function printCompnanies(data) {
 
 printCompnanies(data)
 
-console.log(instanceFun.genMath())
+// console.log(instanceFun.getDataCapured())
 
 function searchDetails() {
     var results = instanceFun.filterFunction(search.value)
@@ -42,36 +54,106 @@ window.onclick = function (event) {
 }
 
 function showGrapth() {
+2
+    var xValues = ['Morning', 'Afternoon', 'Evening',];
+    var xValuesMbps = ['Slow', 'Fast', 'Normal', 'Super Fast'];
+    let seachGra = document.getElementById('seachGra').value
+    // console.log(instanceFun.filterFunction(seachGra))
+    // console.log(instanceFun.getDataCapured())
+    if (seachGra == "") {
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: instanceFun.graDataDisplay()
+            },
+            options: {
+                legend: { display: true },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: "On the y-axis it's speed per Mbps and x-axis it's the time of the day"
+                }
+            }
+        });
+    } else if(instanceFun.filterGraphFunction(seachGra).length != 0) {
+        instanceFun.setValueOfPie(seachGra)
+        var shift = instanceFun.filterPieFunction()
 
-    var xValues = ['', 'Speed', 'Users', 'Coverage', 'Price'];
+        for(var i=0; i<shift.length; i++){
 
-    new Chart("myChart", {
-        type: "line",
-        data: {
-            labels: xValues,
-            datasets: [{
-                labeal: "Name",
-                data: [,860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
-                borderColor: "red",
-                fill: true
-            }, {
-                data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
-                borderColor: "green",
-                fill: true
-            }, {
-                data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
-                borderColor: "blue",
-                fill: true
-            }]
-        },
-        options: {
-            legend: { display: true }
         }
-    });
+        
+        // console.log(shift.pop())
+        // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
+        //     const subObj = {[key]: shift[key]};
+        //     return arr.concat(subObj)
+        // }, []);
+
+        var myData = Object.keys(shift).map(key => {
+            return shift[key];
+        })
+        // console.log(myData)
+
+        var arrayEmp = []
+
+        arrayGraph.push({
+            label: myData[0],
+            data: myData[1],
+            backgroundColor: myData[2],
+            hoverOffset: 10
+        })
+        console.log(arrayEmp)
+
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValuesMbps,
+                datasets: [shift.pop()]
+            },
+            options: {
+                legend: { display: true },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'This is the speed for ' + seachGra.toUpperCase() + ' at different times of the day'
+                }
+            }
+        });
+    }
 
 }
 
-showGrapth()
-
 
 search.addEventListener('keyup', searchDetails)
+
+addDataElement.addEventListener('click', () => {
+    const objectSet = {}
+    const company = document.getElementById("company").value;
+    const morning = document.getElementById("morning").value;
+    const morningspeed = document.getElementById("morningspeed").value;
+    const afternoon = document.getElementById("afternoon").value;
+    const afternoonspeed = document.getElementById("afternoonspeed").value;
+    const eveningspeed = document.getElementById("eveningspeed").value;
+    const evening = document.getElementById("evening").value;
+    const placeentered = document.getElementById("placeentered").value;
+
+    if (company !== "" && morning !== "" && morningspeed !== "" && afternoon !== "" && afternoonspeed !== "" && eveningspeed !== "" && evening !== "" && placeentered !== "") {
+        objectSet.companyName = company
+        objectSet.morning = morning
+        objectSet.afternoon = afternoon
+        objectSet.morningspeed = parseInt(morningspeed)
+        objectSet.afternoonspeed = parseInt(afternoonspeed)
+        objectSet.eveningspeed = parseInt(eveningspeed)
+        objectSet.evening = evening
+        objectSet.placeentered = placeentered
+        instanceFun.addDataFunction(objectSet)
+        localStorage.setItem("graph", JSON.stringify(instanceFun.getDataCapured()));
+        alert("Data captured Successful 🧑🏾‍💻Thank you🤝")
+        // location.reload()
+    } else {
+        alert("Please make sure all the fields are selected!")
+    }
+
+
+})
