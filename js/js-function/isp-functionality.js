@@ -1,4 +1,4 @@
-function ISPFunction(){
+function ISPFunction() {
 
     let graphData = []
 
@@ -7,69 +7,86 @@ function ISPFunction(){
     let pieData = []
     let pieDataG = []
     let searchValue = ''
+    let searchValueNet = ''
+    let dataFilteredArray = []
 
-    function getCompanyData(){
+    function getCompanyData() {
         return companyData
     }
 
-    function filterFunction(name){
+    function filterFunction(name) {
         const dataFiltered = companyData.filter(elem => {
-            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.router.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || elem.data.toLowerCase().includes(name.toLowerCase()) || elem.price.toLowerCase().includes(name.toLowerCase()) 
+            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.router.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || elem.data.toLowerCase().includes(name.toLowerCase()) || elem.price.toLowerCase().includes(name.toLowerCase())
         })
         return dataFiltered
     }
 
-    function setValueOfPie(name){
+    function setValueOfPie(name, nameN) {
         searchValue = name
+        searchValueNet = nameN
     }
 
-    function filterGraphFunction(name){
-        const dataFiltered = dataCapured.filter(element => {
-            return element.location.toLowerCase().includes(name) || element.companyName.toLowerCase().includes(name) 
-        })
-        return dataFiltered
+    function filterGraphFunction(name, nameNet) {
+        dataFilteredArray = []
+        if (name != "" && nameNet != "" ) {
+            const dataFiltered = dataCapured.filter(element => {
+                if(element.location.toLowerCase().includes(nameNet) && element.companyName.toLowerCase().includes(name)){
+                    dataFilteredArray.push({
+                        companyName: element.companyName ,
+                        day: element.day,
+                        speed: element.speed,
+                        location: element.location,
+                        hidden: element.hidden
+                    })
+                }
+                return ''
+                // return element.location.toLowerCase().includes(name) || element.companyName.toLowerCase().includes(name)
+            })
+            return dataFilteredArray
+        }
+
     }
 
     function getRandomNumber(low, high) {
         var r = Math.floor(Math.random() * (high - low + 1)) + low;
         return r;
-      }
+    }
 
     function getRandomColor() {
         var characters = "0123456789ABCDEF";
         var color = '#';
-      
-        for (var i = 0; i < 6; i++) {
-          color += characters[getRandomNumber(0, 15)];
-        }
-        
-        return color;
-      }
 
-    function filterPieFunction(){
-        pieData = filterGraphFunction(searchValue)
+        for (var i = 0; i < 6; i++) {
+            color += characters[getRandomNumber(0, 15)];
+        }
+
+        return color;
+    }
+
+    function filterPieFunction() {
+        pieData = filterGraphFunction(searchValue, searchValueNet)
         pieDataG = []
         var slow = 0
         var fast = 0
         var normal = 0
         var supper = 0
         const pieDataf = pieData.filter(elem => {
-            
+
 
             elem.speed.forEach(element => {
-                if (element == 25){
+                if (element == 25) {
                     slow++
-                } if (element == 50){
+                } if (element == 50) {
                     fast++
-                } if (element == 100){
+                } if (element == 100) {
                     normal++
                 }
-                if (element == 200){
+                if (element == 200) {
                     supper++
-                } 
+                }
             });
 
-            if(elem.location.toLowerCase().includes(searchValue) || elem.companyName.toLowerCase().includes(searchValue)) {
+            if (elem.location.toLowerCase().includes(searchValueNet) && elem.companyName.toLowerCase().includes(searchValue)) {
                 pieDataG.push({
                     label: elem.companyName + ' @ ' + elem.location,
                     data: [slow, fast, normal, supper],
@@ -83,12 +100,12 @@ function ISPFunction(){
         return pieDataG
     }
 
-    function graDataDisplay(){
+    function graDataDisplay() {
         graphData = []
-        
+
         const data = dataCapured.filter(elem => {
             graphData.push({
-                label: elem.companyName + ' @ '+ elem.location,
+                label: elem.companyName + ' @ ' + elem.location,
                 hidden: elem.hidden,
                 data: elem.speed,
                 borderColor: getRandomColor()
@@ -98,15 +115,15 @@ function ISPFunction(){
         return graphData
     }
 
-    function getDataCapured(){
+    function getDataCapured() {
         return dataCapured
     }
 
-    function setDataCapured(name){
+    function setDataCapured(name) {
         dataCapured = name
     }
 
-    function addDataFunction(objectPassed){
+    function addDataFunction(objectPassed) {
         dataCapured.push({
             companyName: objectPassed.companyName,
             hidden: true,

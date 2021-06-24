@@ -55,13 +55,14 @@ window.onclick = function (event) {
 }
 
 function showGrapth() {
-2
     var xValues = ['Morning', 'Afternoon', 'Evening',];
     var xValuesMbps = ['Slow', 'Fast', 'Normal', 'Super Fast'];
     let seachGra = document.getElementById('seachGra').value
+    let seachGraPla = document.getElementById('seachGraPla').value
+    // let seachGra = document.getElementById('seachGra').value
     // console.log(instanceFun.filterFunction(seachGra))
     // console.log(instanceFun.getDataCapured())
-    if (seachGra == "") {
+    if (seachGra == "" && seachGraPla == "") {
         new Chart("myChart", {
             type: "line",
             data: {
@@ -78,13 +79,14 @@ function showGrapth() {
             }
         });
     }
-    if(seachGra != "" && instanceFun.filterGraphFunction(seachGra).length != 0) {
-        instanceFun.setValueOfPie(seachGra)
+    console.log(seachGraPla)
+    if(seachGra != "" && seachGraPla != "" && instanceFun.filterGraphFunction(seachGra, seachGraPla).length != 0) {
+        instanceFun.setValueOfPie(seachGra, seachGraPla)
         var shift = instanceFun.filterPieFunction()
 
-        for(var i=0; i<shift.length; i++){
+        // for(var i=0; i<shift.length; i++){
 
-        }
+        // }
         
         // console.log(shift.pop())
         // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
@@ -92,20 +94,20 @@ function showGrapth() {
         //     return arr.concat(subObj)
         // }, []);
 
-        var myData = Object.keys(shift).map(key => {
-            return shift[key];
-        })
-        // console.log(myData)
+        // var myData = Object.keys(shift).map(key => {
+        //     return shift[key];
+        // })
+        // // console.log(myData)
 
-        var arrayEmp = []
+        // var arrayEmp = []
 
-        arrayGraph.push({
-            label: myData[0],
-            data: myData[1],
-            backgroundColor: myData[2],
-            hoverOffset: 10
-        })
-        console.log(arrayEmp)
+        // arrayGraph.push({
+        //     label: myData[0],
+        //     data: myData[1],
+        //     backgroundColor: myData[2],
+        //     hoverOffset: 10
+        // })
+        // console.log(arrayEmp)
 
         new Chart("myChart1", {
             type: "pie",
@@ -125,6 +127,7 @@ function showGrapth() {
     }
 
     document.getElementById('seachGra').value = ""
+    document.getElementById('seachGraPla').value = ""
 
 }
 

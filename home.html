@@ -93,8 +93,12 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <div class="red">
-              <input type="text" id="seachGra" placeholder="Location / Company-Name"
+              <input type="text" id="seachGra" placeholder="Company-Name"
                 style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+                <span> @</span>
+              <input type="text" id="seachGraPla" placeholder="Location"
+                style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+
               <button class="graph-display" onclick="showGrapth()">Show Graph</button>
             </div>
             <span class="close">&times;</span>
@@ -151,7 +155,7 @@
           <option value="25">Slow </option>
           <option value="50">Fast </option>
           <option value="100">Normal</option>
-          <option value="200">Supper Faster</option>
+          <option value="200">Super Faster</option>
         </select> <br>
 
         <select name="" id="evening">
