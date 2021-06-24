@@ -54,9 +54,9 @@ window.onclick = function (event) {
 }
 
 function showGrapth() {
-
+2
     var xValues = ['Morning', 'Afternoon', 'Evening',];
-    var xValuesMbps = ['25Mbps', '50Mbps', '100Mbps', '200Mbps'];
+    var xValuesMbps = ['Slow', 'Fast', 'Normal', 'Super Fast'];
     let seachGra = document.getElementById('seachGra').value
     // console.log(instanceFun.filterFunction(seachGra))
     // console.log(instanceFun.getDataCapured())
@@ -84,7 +84,7 @@ function showGrapth() {
 
         }
         
-        console.log(instanceFun.filterPieFunction())
+        // console.log(shift.pop())
         // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
         //     const subObj = {[key]: shift[key]};
         //     return arr.concat(subObj)
@@ -150,7 +150,7 @@ addDataElement.addEventListener('click', () => {
         instanceFun.addDataFunction(objectSet)
         localStorage.setItem("graph", JSON.stringify(instanceFun.getDataCapured()));
         alert("Data captured Successful 🧑🏾‍💻Thank you🤝")
-        location.reload()
+        // location.reload()
     } else {
         alert("Please make sure all the fields are selected!")
     }
