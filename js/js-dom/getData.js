@@ -31,7 +31,7 @@ function printCompnanies(data) {
 
 printCompnanies(data)
 
-console.log(instanceFun.getDataCapured())
+// console.log(instanceFun.getDataCapured())
 
 function searchDetails() {
     var results = instanceFun.filterFunction(search.value)
@@ -56,8 +56,10 @@ window.onclick = function (event) {
 function showGrapth() {
 
     var xValues = ['Morning', 'Afternoon', 'Evening',];
+    var xValuesMbps = ['25Mbps', '50Mbps', '100Mbps', '200Mbps'];
     let seachGra = document.getElementById('seachGra').value
-    console.log(seachGra)
+    // console.log(instanceFun.filterFunction(seachGra))
+    // console.log(instanceFun.getDataCapured())
     if (seachGra == "") {
         new Chart("myChart", {
             type: "line",
@@ -74,8 +76,32 @@ function showGrapth() {
                 }
             }
         });
-    } else {
+    } else if(instanceFun.filterGraphFunction(seachGra).length != 0) {
+        instanceFun.setValueOfPie(seachGra)
+        var shift = instanceFun.filterPieFunction()
         
+        // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
+        //     const subObj = [key]: shift[key];
+        //     return arr.concat(subObj)
+        // }, []);
+
+        // console.log(reducedData)
+
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValuesMbps,
+                datasets: shift
+            },
+            options: {
+                legend: { display: true },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'This is the speed for ' + seachGra.toUpperCase() + ' at different times of the day'
+                }
+            }
+        });
     }
 
 }

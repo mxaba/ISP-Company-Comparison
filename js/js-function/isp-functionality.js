@@ -4,6 +4,9 @@ function ISPFunction(){
 
     var companyData = dataSet()
     var dataCapured = []
+    let pieData = []
+    let pieDataG = []
+    let searchValue = ''
 
     function getCompanyData(){
         return companyData
@@ -11,14 +14,18 @@ function ISPFunction(){
 
     function filterFunction(name){
         const dataFiltered = companyData.filter(elem => {
-            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.router.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || elem.price.toLowerCase().includes(name.toLowerCase()) 
+            return elem.companyName.toLowerCase().includes(name.toLowerCase()) || elem.router.toLowerCase().includes(name.toLowerCase()) || elem.area.toLowerCase().includes(name.toLowerCase()) || elem.data.toLowerCase().includes(name.toLowerCase()) || elem.price.toLowerCase().includes(name.toLowerCase()) 
         })
         return dataFiltered
     }
 
+    function setValueOfPie(name){
+        searchValue = name
+    }
+
     function filterGraphFunction(name){
-        const dataFiltered = dataCapured.filter(elem => {
-            return elem.companyName.toLowerCase().includes(name) || elem.location.toLowerCase().includes(name) 
+        const dataFiltered = dataCapured.filter(element => {
+            return element.location.toLowerCase().includes(name) || element.companyName.toLowerCase().includes(name) 
         })
         return dataFiltered
     }
@@ -39,6 +46,42 @@ function ISPFunction(){
         return color;
       }
 
+    function filterPieFunction(){
+        pieData = filterGraphFunction(searchValue)
+        pieDataG = []
+        const pieDataf = pieData.filter(elem => {
+            var slow = 0
+            var fast = 0
+            var normal = 0
+            var supper = 0
+
+            elem.speed.forEach(element => {
+                if (element == 25){
+                    slow++
+                } if (element == 50){
+                    fast++
+                } if (element == 100){
+                    normal++
+                }
+                if (element == 200){
+                    supper++
+                } 
+            });
+
+            if(elem.location.toLowerCase().includes(searchValue) || elem.companyName.toLowerCase().includes(searchValue)) {
+                pieDataG.push({
+                    label: elem.companyName + ' @ ' + elem.location,
+                    data: [slow, fast, normal, supper],
+                    backgroundColor: [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()],
+                    hoverOffset: 10
+                })
+
+            }
+            return ''
+        })
+        return pieDataG
+    }
+
     function graDataDisplay(){
         graphData = []
         const data = dataCapured.filter(elem => {
@@ -48,6 +91,20 @@ function ISPFunction(){
                 data: elem.speed,
                 borderColor: getRandomColor(),
                 fill: true
+            })
+            return ''
+        })
+        return graphData
+    }
+
+    function graDataDisplay(){
+        graphData = []
+        const data = dataCapured.filter(elem => {
+            graphData.push({
+                label: elem.companyName + ' @ '+ elem.location,
+                hidden: elem.hidden,
+                data: elem.speed,
+                borderColor: getRandomColor()
             })
             return ''
         })
@@ -79,6 +136,8 @@ function ISPFunction(){
         getDataCapured,
         graDataDisplay,
         getCompanyData,
-        filterFunction
+        filterFunction,
+        setValueOfPie,
+        filterPieFunction
     }
 }
