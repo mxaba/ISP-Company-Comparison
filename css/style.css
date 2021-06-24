@@ -317,6 +317,7 @@ margin: auto;
 /* padding: 90px; */
 border: 1px solid #888;
 width: 80%;
+height: 100%;
 }
 
 /* The Close Button */
@@ -404,4 +405,5 @@ background-color: white;
 align-items: center;
 text-align: center;
 }
+
 

@@ -85,21 +85,7 @@ function ISPFunction(){
 
     function graDataDisplay(){
         graphData = []
-        const data = dataCapured.filter(elem => {
-            graphData.push({
-                label: elem.companyName + ' @ '+ elem.location,
-                hidden: elem.hidden,
-                data: elem.speed,
-                borderColor: getRandomColor(),
-                fill: true
-            })
-            return ''
-        })
-        return graphData
-    }
-
-    function graDataDisplay(){
-        graphData = []
+        
         const data = dataCapured.filter(elem => {
             graphData.push({
                 label: elem.companyName + ' @ '+ elem.location,

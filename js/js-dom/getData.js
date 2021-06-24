@@ -50,6 +50,7 @@ span.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        location.reload()
     }
 }
 
@@ -106,7 +107,7 @@ function showGrapth() {
         })
         console.log(arrayEmp)
 
-        new Chart("myChart", {
+        new Chart("myChart1", {
             type: "pie",
             data: {
                 labels: xValuesMbps,
@@ -123,7 +124,7 @@ function showGrapth() {
         });
     }
 
-    document.getElementById('seachGra').value = ''
+    document.getElementById('seachGra').value = ""
 
 }
 
