@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/simple-grid.css">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/skeleton.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <title>Home | ISP Company</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/simple-grid.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>Home | ISP Company</title>
 
-  <script type="text/x-template" class="ISPdata">
+    <script type="text/x-template" class="ISPdata">
         {{#each company}}
         <tr>
-          <td><strong>{{this.companyName}}</strong></td>
-          <td>{{this.speed}}</td>
-          <td>{{this.price}}</td>
-          <td>{{this.data}}</td>
-          <td>{{this.coverage}}</td>
-          <td>{{this.date}}</td>
-          <td>{{this.users}}</td>
-          <td>{{this.router}}</td>
-          <td>{{this.area}}</td>
+            <td><strong>{{this.companyName}}</strong></td>
+            <td>{{this.speed}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.data}}</td>
+            <td>{{this.coverage}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.users}}</td>
+            <td>{{this.router}}</td>
+            <td>{{this.area}}</td>
         </tr>
         {{/each}}
     </script>
@@ -43,14 +43,14 @@
     <div class="container">
         <!-- Navigation -->
         <div class="logo">
-            <a href="home.html"><img src="/image/logo.png" class="logo" alt=""></a>
+            <a href="home.html"><img src="image/logo.png" class="logo" alt=""></a>
 
         </div>
         <div class="topnav">
 
             <a href="main.html">About</a>
             <a href="home.html">ISP Company</a>
-            <a href="adding-ISP.html">Sign up</a>
+            <a href="add-ISP.html">Sign up</a>
         </div>
 
         <div class="header">
@@ -61,65 +61,65 @@
             <!-- <label for="search">Search:</label> -->
             <label for="search">Search: <input type="search" id="search" name="search"
           placeholder="please enter your search"></label>
-      <!-- <input type="submit"> -->
-    </div>
-    <div class="row">
-
-
-      <div class="col-9 row-table">
-
-
-        <div class="column">
-          <table class="styled-table">
-            <thead>
-              <tr>
-                <th>ISP Company</th>
-                <th>Line Speed</th>
-                <th>Price p/m</th>
-                <th>data</th>
-                <th>Coverage</th>
-                <th>Date Established</th>
-                <th>Users</th>
-                <th>Router</th>
-                <th>Surbubs</th>
-              </tr>
-            </thead>
-            <tbody class="userData">
-
-            </tbody>
-          </table>
+            <!-- <input type="submit"> -->
         </div>
+        <div class="row">
 
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <div class="red">
-              <input type="text" id="seachGra" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
-              <button class="graph-display" onclick="showGrapth()">Show Graph</button>
+
+            <div class="col-9 row-table">
+
+
+                <div class="column">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>ISP Company</th>
+                                <th>Line Speed</th>
+                                <th>Price p/m</th>
+                                <th>data</th>
+                                <th>Coverage</th>
+                                <th>Date Established</th>
+                                <th>Users</th>
+                                <th>Router</th>
+                                <th>Surbubs</th>
+                            </tr>
+                        </thead>
+                        <tbody class="userData">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="red">
+                            <input type="text" id="seachGra" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+                            <button class="graph-display" onclick="showGrapth()">Show Graph</button>
+                        </div>
+                        <span class="close">&times;</span>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="myModal1" class="modal1">
+                    <div class="modal-content1">
+                        <div class="red">
+                            <input type="text" id="seachGra1" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+                            <button class="graph-display1" onclick="showGrapth()">Show Graph</button>
+                        </div>
+                        <span class="close1">&times;</span>
+                        <canvas id="myChart1"></canvas>
+                    </div>
+                </div>
+
             </div>
-            <span class="close">&times;</span>
-            <canvas id="myChart" ></canvas>
-          </div>
-        </div>
 
-        <div id="myModal1" class="modal1">
-          <div class="modal-content1">
-            <div class="red">
-              <input type="text" id="seachGra1" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
-              <button class="graph-display1" onclick="showGrapth()">Show Graph</button>
-            </div>
-            <span class="close1">&times;</span>
-            <canvas id="myChart1" ></canvas>
-          </div>
-        </div>
+            <div class="col-3 ">
+                <h6>Please let us know how is the network speed of the current service you are using these times of the day, Thank you!</h6>
+                <!-- <form class="datainaside"> -->
 
-      </div>
-
-      <div class="col-3 ">
-        <h6>Please let us know how is the network speed of the current service you are using these times of the day, Thank you!</h6>
-        <!-- <form class="datainaside"> -->
-
-          <label>Select the company</label>
-          <select name="" id="company">
+                <label>Select the company</label>
+                <select name="" id="company">
             
             <option value="">Company Name </option>
             <option value="Telkom">Telkom </option>
@@ -131,12 +131,12 @@
             <option value="Open serve">Open serve </option>
           </select> <br>
 
-          <label>Select the time of the Day and Speed</label>
-          <select name="" id="morning">
+                <label>Select the time of the Day and Speed</label>
+                <select name="" id="morning">
             <option value="Morning">Morning </option>
           </select>
-          
-          <select name="" id="morningspeed">
+
+                <select name="" id="morningspeed">
             
             <option value="">Speed </option>
             <option value="25">Slow </option>
@@ -145,11 +145,11 @@
             <option value="200">Super Faster</option>
           </select> <br>
 
-          <select name="" id="afternoon">
+                <select name="" id="afternoon">
             <option value="Afternoon">Afternoon </option>
           </select>
-          
-          <select name="" id="afternoonspeed">
+
+                <select name="" id="afternoonspeed">
             
             <option value="">Speed </option>
             <option value="25">Slow </option>
@@ -158,11 +158,11 @@
             <option value="200">Supper Faster</option>
           </select> <br>
 
-          <select name="" id="evening">
+                <select name="" id="evening">
             <option value="Evening">Evening</option>
           </select>
-          
-          <select name="" id="eveningspeed">
+
+                <select name="" id="eveningspeed">
             
             <option value="">Speed </option>
             <option value="25">Slow </option>
@@ -171,29 +171,29 @@
             <option value="200">Super Faster</option>
           </select> <br>
 
-          <label for="">Place you are from</label>
-          <input type="text" id="placeentered">
+                <label for="">Place you are from</label>
+                <input type="text" id="placeentered">
 
-          <button class="addData graph-display"> Sumbit</button>
-          <button class="graph-display" id="myBtn"> See Data</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="six column  graph">
-        <button class="graph-display">Graph Display</button>
-        
-      </div>
-    </div>
-
+                <button class="addData graph-display"> Sumbit</button>
+                <button class="graph-display" id="myBtn"> See Data</button>
+            </div>
         </div>
         <div class="row">
             <div class="six column  graph">
                 <button class="graph-display">Graph Display</button>
-                <button class="graph-display" id="myBtn">Improvements of company</button>
+
             </div>
         </div>
 
-        <!-- <div class="footer">
+    </div>
+    <div class="row">
+        <div class="six column  graph">
+            <button class="graph-display">Graph Display</button>
+            <button class="graph-display" id="myBtn">Improvements of company</button>
+        </div>
+    </div>
+
+    <!-- <div class="footer">
             footer   
         </div> -->
 
@@ -204,8 +204,10 @@
     <script src="./js/js-dom/getData.js"></script>
 </body>
 
-<!-- <div class="footer">
-    footer   
-</div> -->
+<div class="footer">
+    <span class="material-icons-outlined">
+    copyright
+    </span>SegFault
+</div>
 
 </html>
