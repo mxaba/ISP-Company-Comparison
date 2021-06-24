@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/skeleton.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <title>Home | ISP Company</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>Home | ISP Company</title>
 
-  <script type="text/x-template" class="ISPdata">
+    <script type="text/x-template" class="ISPdata">
         {{#each company}}
         <tr>
-          <td><strong>{{this.companyName}}</strong></td>
-          <td>{{this.speed}}</td>
-          <td>{{this.price}}</td>
-          <td>{{this.coverage}}</td>
-          <td>{{this.date}}</td>
-          <td>{{this.users}}</td>
-          <td>{{this.instructions}}</td>
-          <td>{{this.area}}</td>
+            <td><strong>{{this.companyName}}</strong></td>
+            <td>{{this.speed}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.coverage}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.users}}</td>
+            <td>{{this.instructions}}</td>
+            <td>{{this.area}}</td>
         </tr>
         {{/each}}
     </script>
@@ -35,65 +35,79 @@
 
 <body>
 
-  <div class="container">
 
-    <div class="header">
-      <h2>ISP Company Comparison</h2>
-    </div>
 
-    <div class="searchBar">
-      <!-- <label for="search">Search:</label> -->
-      <label for="search">Search: <input type="search" id="search" name="search"
-          placeholder="please enter your search"></label>
-      <!-- <input type="submit"> -->
-    </div>
-    
-    <div class="row row-table">
 
-      <div class="twelve column">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>ISP Company</th>
-              <th>Speed</th>
-              <th>Price</th>
-              <th>Coverage</th>
-              <th>Date</th>
-              <th>Users</th>
-              <th>Instructions</th>
-              <th>Surbubs</th>
-            </tr>
-          </thead>
-          <tbody class="userData">
+    <div class="container">
+        <!-- Navigation -->
+        <div class="logo">
+            <a href="home.html"><img src="/image/logo.png" class="logo" alt=""></a>
 
-          </tbody>
-        </table>
-      </div>
-
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <canvas id="myChart" style="width:100%;"></canvas>
         </div>
-      </div>
+        <div class="topnav">
 
-    </div>
-    <div class="row">
-      <div class="six column  graph">
-        <button class="graph-display" >Graph Display</button>
-        <button class="graph-display" id="myBtn">Improvements of company</button>
-      </div>
-    </div>
+            <a href="main.html">About</a>
+            <a href="home.html">ISP Company</a>
+            <a href="adding-ISP.html">Sign up</a>
+        </div>
 
-    <!-- <div class="footer">
+        <div class="header">
+            <h2>ISP Company Comparison</h2>
+        </div>
+
+        <div class="searchBar">
+            <!-- <label for="search">Search:</label> -->
+            <label for="search">Search: <input type="search" id="search" name="search"
+          placeholder="please enter your search"></label>
+            <!-- <input type="submit"> -->
+        </div>
+
+        <div class="row row-table">
+
+            <div class="twelve column">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>ISP Company</th>
+                            <th>Speed</th>
+                            <th>Price</th>
+                            <th>Coverage</th>
+                            <th>Date</th>
+                            <th>Users</th>
+                            <th>Instructions</th>
+                            <th>Surbubs</th>
+                        </tr>
+                    </thead>
+                    <tbody class="userData">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <canvas id="myChart" style="width:100%;"></canvas>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="six column  graph">
+                <button class="graph-display">Graph Display</button>
+                <button class="graph-display" id="myBtn">Improvements of company</button>
+            </div>
+        </div>
+
+        <!-- <div class="footer">
             footer   
         </div> -->
 
-  </div>
+    </div>
 
-  <script src="./js/dataSet.js"></script>
-  <script src="./js/js-function/isp-functionality.js"></script>
-  <script src="./js/js-dom/getData.js"></script>
+    <script src="./js/dataSet.js"></script>
+    <script src="./js/js-function/isp-functionality.js"></script>
+    <script src="./js/js-dom/getData.js"></script>
 </body>
 
 <!-- <div class="footer">
