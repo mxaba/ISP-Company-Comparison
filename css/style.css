@@ -453,3 +453,7 @@ h2 {
     align-items: center;
     text-align: center;
 }
+
+.Company-add input {
+    width: 30%;
+}

@@ -13,6 +13,7 @@ const instanceFun = ISPFunction();
 // userDataDisplay.innerHTML = ISPdataTemplate({ company : instanceFun.getCompanyData() })
 
 let arrayGraph = []
+let dataset = []
 
 if (localStorage['graph']) {
     arrayGraph = JSON.parse(localStorage.getItem("graph"));
@@ -21,7 +22,15 @@ if (localStorage['graph']) {
     arrayGraph = dataCal();
 }
 
+if (localStorage['dataset']) {
+    dataset = JSON.parse(localStorage.getItem("dataset"));
+} else {
+    // eslint-disable-next-line no-undef
+    dataset = dataSet();
+}
+
 instanceFun.setDataCapured(arrayGraph)
+instanceFun.setCompanyData(dataset)
 
 var data = instanceFun.getCompanyData()
 
@@ -59,9 +68,6 @@ function showGrapth() {
     var xValuesMbps = ['Slow', 'Fast', 'Normal', 'Super Fast'];
     let seachGra = document.getElementById('seachGra').value
     let seachGraPla = document.getElementById('seachGraPla').value
-    // let seachGra = document.getElementById('seachGra').value
-    // console.log(instanceFun.filterFunction(seachGra))
-    // console.log(instanceFun.getDataCapured())
     if (seachGra == "" && seachGraPla == "") {
         new Chart("myChart", {
             type: "line",
@@ -83,32 +89,6 @@ function showGrapth() {
     if(seachGra != "" && seachGraPla != "" && instanceFun.filterGraphFunction(seachGra, seachGraPla).length != 0) {
         instanceFun.setValueOfPie(seachGra, seachGraPla)
         var shift = instanceFun.filterPieFunction()
-
-        // for(var i=0; i<shift.length; i++){
-
-        // }
-        
-        // console.log(shift.pop())
-        // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
-        //     const subObj = {[key]: shift[key]};
-        //     return arr.concat(subObj)
-        // }, []);
-
-        // var myData = Object.keys(shift).map(key => {
-        //     return shift[key];
-        // })
-        // // console.log(myData)
-
-        // var arrayEmp = []
-
-        // arrayGraph.push({
-        //     label: myData[0],
-        //     data: myData[1],
-        //     backgroundColor: myData[2],
-        //     hoverOffset: 10
-        // })
-        // console.log(arrayEmp)
-
         new Chart("myChart1", {
             type: "pie",
             data: {
@@ -125,10 +105,8 @@ function showGrapth() {
             }
         });
     }
-
     document.getElementById('seachGra').value = ""
     document.getElementById('seachGraPla').value = ""
-
 }
 
 
@@ -161,6 +139,4 @@ addDataElement.addEventListener('click', () => {
     } else {
         alert("Please make sure all the fields are selected!")
     }
-
-
 })

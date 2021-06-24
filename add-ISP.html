@@ -26,32 +26,39 @@
 
         <div class="add-heading">
             <h5>Please add your company details in the fields below:</h5>
-            <form class="Company-add">
+            <div class="Company-add">
                 <label for="Company name">Company name:</label>
-                <input type="text" id="Cname" name="Cname" placeholder="Company Name"><br><br>
+                <input type="text" id="Cname" name="Cname" value="" placeholder="Company Name"><br><br>
                 <label for="speed">Line speed (mbps):</label>
-                <input type="text" id="speed" name="speed" placeholder="speed"><br><br>
+                <input type="text" id="speed" name="speed" value="" placeholder="25Mbps, 50Mbps, 100Mbps, 200Mbps"><br><br>
                 <label for="price">Price p/m:</label>
-                <input type="text" id="price" name="price" placeholder="price"><br><br>
+                <input type="text" id="price" name="price" value="" placeholder="R750, R967, R1 290, R1 691"><br><br>
+                <label for="price">Data</label>
+                <select id="data">
+                    <option value="uncapped">Uncapped</option>
+                    <option value="capped">Capped</option>
+                </select><br><br>
                 <label for="coverage">Coverage:</label>
-                <input type="text" id="coverage" name="coverage" placeholder="coverage"><br><br>
+                <input type="text" id="coverage" name="coverage" value="" placeholder="All provinces covered by the company"><br><br>
                 <label for="date">Date established:</label>
-                <input type="text" id="date" name="date" placeholder="date"><br><br>
+                <input type="date" id="date" name="date" value="" placeholder="date"><br><br>
                 <label for="users">Users:</label>
-                <input type="text" id="users" name="users" placeholder="users"><br><br>
-                <label for="installation">Installation included:</label>
-                <input type="text" id="installation" name="installation" placeholder="yes/no"><br><br>
+                <input type="number" id="users" name="users" value="" placeholder="users"><br><br>
+                <label for="installation">Router & Installation included:</label>
+                <input type="text" id="installation" name="installation" value="" placeholder="Included & Fully installed"><br><br>
                 <label for="suburbs">Suburbs:</label>
-                <input type="text" id="suburbs" name="suburbs" placeholder="suburbs"><br><br>
-                <input class="submit" type="submit" value="Submit">
-            </form>
+                <input type="text" id="suburbs" name="suburbs" value="" placeholder="suburbs covered by the company"><br><br>
+                <button class="submit">Submit</button>
+            </div>
         </div>
 
     </div>
 
 
     <span> copyright © 2021  🧑🏾‍💻  <a href="https://github.com/mxaba/ISP-Company-Comparison">SegFault</a> 🧑🏾‍💻 </span>
-
+    <script src="./js/dataSet.js"></script>
+    <script src="./js/js-function/isp-functionality.js"></script>
+    <script src="./js/js-dom/addCompany.js"></script>
 </body>
 
 </html>

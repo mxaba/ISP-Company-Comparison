@@ -2,7 +2,7 @@ function ISPFunction() {
 
     let graphData = []
 
-    var companyData = dataSet()
+    var companyData = []
     var dataCapured = []
     let pieData = []
     let pieDataG = []
@@ -12,6 +12,10 @@ function ISPFunction() {
 
     function getCompanyData() {
         return companyData
+    }
+
+    function setCompanyData(name) {
+        companyData = name
     }
 
     function filterFunction(name) {
@@ -133,6 +137,21 @@ function ISPFunction() {
         })
     }
 
+    function addISPDataFunction(objectPassed) {
+        companyData.push({
+            companyName: objectPassed.companyName,
+            speed: objectPassed.speed,
+            price: objectPassed.price,
+            data: objectPassed.data,
+            coverage: objectPassed.coverage,
+            date: objectPassed.date,
+            users: genUsers(),
+            router: objectPassed.router,
+            color: 'green',
+            area: objectPassed.area,
+        })
+    }
+
     return {
         filterGraphFunction,
         addDataFunction,
@@ -142,6 +161,8 @@ function ISPFunction() {
         getCompanyData,
         filterFunction,
         setValueOfPie,
-        filterPieFunction
+        filterPieFunction,
+        addISPDataFunction,
+        setCompanyData
     }
 }
