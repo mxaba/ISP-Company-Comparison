@@ -21,7 +21,7 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    /* background-color: #333; */
 }
 
 .text {
@@ -209,8 +209,7 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
-background-color: #317773;
-}
+
 h2{
 text-align: center;
 color: #40e271;

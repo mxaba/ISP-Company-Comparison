@@ -40,26 +40,26 @@
 
 
 
-    <div class="container">
-        <!-- Navigation -->
-        <div class="logo">
-            <a href="home.html"><img src="/image/logo.png" class="logo" alt=""></a>
+  <div class="container">
+    <!-- Navigation -->
+    <!-- <div class="logo">
+      <a href="home.html"><img src="/image/logo.png" class="logo" alt=""></a>
 
-        </div>
-        <div class="topnav">
+    </div> -->
+    <div class="topnav header">
 
-            <a href="main.html">About</a>
-            <a href="home.html">ISP Company</a>
-            <a href="adding-ISP.html">Sign up</a>
-        </div>
+      <a href="main.html">About</a>
+      <a href="home.html">ISP Company</a>
+      <a href="adding-ISP.html">Sign up</a>
+    </div>
 
-        <div class="header">
-            <h2>ISP Company Comparison</h2>
-        </div>
+    <div class="header">
+      <h2>ISP Company Comparison</h2>
+    </div>
 
-        <div class="searchBar">
-            <!-- <label for="search">Search:</label> -->
-            <label for="search">Search: <input type="search" id="search" name="search"
+    <div class="searchBar">
+      <!-- <label for="search">Search:</label> -->
+      <label for="search">Search: <input type="search" id="search" name="search"
           placeholder="please enter your search"></label>
       <!-- <input type="submit"> -->
     </div>
@@ -93,115 +93,125 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <div class="red">
-              <input type="text" id="seachGra" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+              <input type="text" id="seachGra" placeholder="Location / Company-Name"
+                style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
               <button class="graph-display" onclick="showGrapth()">Show Graph</button>
             </div>
             <span class="close">&times;</span>
-            <canvas id="myChart" ></canvas>
+            <canvas id="myChart"></canvas>
           </div>
         </div>
 
         <div id="myModal1" class="modal1">
           <div class="modal-content1">
             <div class="red">
-              <input type="text" id="seachGra1" placeholder="Location / Company-Name" style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
+              <input type="text" id="seachGra1" placeholder="Location / Company-Name"
+                style="background-color: rgb(235, 253, 253);" onkeyup="this.value=this.value.toLowerCase()">
               <button class="graph-display1" onclick="showGrapth()">Show Graph</button>
             </div>
             <span class="close1">&times;</span>
-            <canvas id="myChart1" ></canvas>
+            <canvas id="myChart1"></canvas>
           </div>
         </div>
 
       </div>
 
       <div class="col-3 ">
-        <h6>Please let us know how is the network speed of the current service you are using these times of the day, Thank you!</h6>
+        <h6>Please let us know how is the network speed of the current service you are using these times of the day,
+          Thank you!</h6>
         <!-- <form class="datainaside"> -->
 
-          <label>Select the company</label>
-          <select name="" id="company">
-            
-            <option value="">Company Name </option>
-            <option value="Telkom">Telkom </option>
-            <option value="Vodacom">Vodacom </option>
-            <option value="MTN">MTN</option>
-            <option value="Rain">Rain </option>
-            <option value="Afrihost">Afrihost </option>
-            <option value="TooMuchWifi">TooMuchWifi </option>
-            <option value="Open serve">Open serve </option>
-          </select> <br>
+        <label>Select the company</label>
+        <select name="" id="company">
 
-          <label>Select the time of the Day and Speed</label>
-          <select name="" id="morning">
-            <option value="Morning">Morning </option>
-          </select>
-          
-          <select name="" id="morningspeed">
-            
-            <option value="">Speed </option>
-            <option value="25">Slow </option>
-            <option value="50">Fast </option>
-            <option value="100">Normal</option>
-            <option value="200">Super Faster</option>
-          </select> <br>
+          <option value="">Company Name </option>
+          <option value="Telkom">Telkom </option>
+          <option value="Vodacom">Vodacom </option>
+          <option value="MTN">MTN</option>
+          <option value="Rain">Rain </option>
+          <option value="Afrihost">Afrihost </option>
+          <option value="TooMuchWifi">TooMuchWifi </option>
+          <option value="Open serve">Open serve </option>
+        </select> <br>
 
-          <select name="" id="afternoon">
-            <option value="Afternoon">Afternoon </option>
-          </select>
-          
-          <select name="" id="afternoonspeed">
-            
-            <option value="">Speed </option>
-            <option value="25">Slow </option>
-            <option value="50">Fast </option>
-            <option value="100">Normal</option>
-            <option value="200">Supper Faster</option>
-          </select> <br>
+        <label>Select the time of the Day and Speed</label>
+        <select name="" id="morning">
+          <option value="Morning">Morning </option>
+        </select>
 
-          <select name="" id="evening">
-            <option value="Evening">Evening</option>
-          </select>
-          
-          <select name="" id="eveningspeed">
-            
-            <option value="">Speed </option>
-            <option value="25">Slow </option>
-            <option value="50">Fast </option>
-            <option value="100">Normal</option>
-            <option value="200">Super Faster</option>
-          </select> <br>
+        <select name="" id="morningspeed">
 
-          <label for="">Place you are from</label>
-          <input type="text" id="placeentered">
+          <option value="">Speed </option>
+          <option value="25">Slow </option>
+          <option value="50">Fast </option>
+          <option value="100">Normal</option>
+          <option value="200">Super Faster</option>
+        </select> <br>
 
-          <button class="addData graph-display"> Sumbit</button>
-          <button class="graph-display" id="myBtn"> See Data</button>
+        <select name="" id="afternoon">
+          <option value="Afternoon">Afternoon </option>
+        </select>
+
+        <select name="" id="afternoonspeed">
+
+          <option value="">Speed </option>
+          <option value="25">Slow </option>
+          <option value="50">Fast </option>
+          <option value="100">Normal</option>
+          <option value="200">Supper Faster</option>
+        </select> <br>
+
+        <select name="" id="evening">
+          <option value="Evening">Evening</option>
+        </select>
+
+        <select name="" id="eveningspeed">
+
+          <option value="">Speed </option>
+          <option value="25">Slow </option>
+          <option value="50">Fast </option>
+          <option value="100">Normal</option>
+          <option value="200">Super Faster</option>
+        </select> <br>
+
+        <label for="">Place you are from</label>
+        <!-- <input type="text" id="placeentered"> -->
+        <select class="place-select">
+          <option value="Atlantic Seaboard">Atlantic Seaboard</option>
+          <option value="Belhar">Belhar</option>
+          <option value="Parow">Parow</option>
+          <option value="Klipfontein District (Old Cape Flats)">Klipfontein District (Old Cape Flats)</option>
+          <option value="City Bowl">City Bowl</option>
+          <option value="Helderberg">Helderberg</option>
+          <option value="Northern Suburbs">Northern Suburbs</option>
+          <option value="South Peninsula">South Peninsula</option>
+          <option value="Southern Suburbs">Southern Suburbs</option>
+          <option value="Western Suburbs">Western Suburbs</option>
+          <option value="Gugulethu">Gugulethu</option>
+          <option value="Khayelitsha">Khayelitsha</option>
+          <option value="Mitchells Plain">Mitchells Plain</option>
+          <option value="Ottery">Ottery</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button class="addData graph-display"> Sumbit</button>
+        <button class="graph-display" id="myBtn"> See Data</button>
       </div>
     </div>
-    <div class="row">
-      <div class="six column  graph">
-        <button class="graph-display">Graph Display</button>
-        
-      </div>
-    </div>
+    
 
-        </div>
-        <div class="row">
-            <div class="six column  graph">
-                <button class="graph-display">Graph Display</button>
-                <button class="graph-display" id="myBtn">Improvements of company</button>
-            </div>
-        </div>
+  </div>
+  
 
-        <!-- <div class="footer">
+  <!-- <div class="footer">
             footer   
         </div> -->
 
-    </div>
+  </div>
 
-    <script src="./js/dataSet.js"></script>
-    <script src="./js/js-function/isp-functionality.js"></script>
-    <script src="./js/js-dom/getData.js"></script>
+  <script src="./js/dataSet.js"></script>
+  <script src="./js/js-function/isp-functionality.js"></script>
+  <script src="./js/js-dom/getData.js"></script>
 </body>
 
 <!-- <div class="footer">
