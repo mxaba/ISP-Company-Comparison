@@ -79,19 +79,37 @@ function showGrapth() {
     } else if(instanceFun.filterGraphFunction(seachGra).length != 0) {
         instanceFun.setValueOfPie(seachGra)
         var shift = instanceFun.filterPieFunction()
+
+        for(var i=0; i<shift.length; i++){
+
+        }
         
+        console.log(instanceFun.filterPieFunction())
         // var reducedData =  Object.keys(shift).reduce((arr, key)=>{
-        //     const subObj = [key]: shift[key];
+        //     const subObj = {[key]: shift[key]};
         //     return arr.concat(subObj)
         // }, []);
 
-        // console.log(reducedData)
+        var myData = Object.keys(shift).map(key => {
+            return shift[key];
+        })
+        // console.log(myData)
+
+        var arrayEmp = []
+
+        arrayGraph.push({
+            label: myData[0],
+            data: myData[1],
+            backgroundColor: myData[2],
+            hoverOffset: 10
+        })
+        console.log(arrayEmp)
 
         new Chart("myChart", {
             type: "pie",
             data: {
                 labels: xValuesMbps,
-                datasets: shift
+                datasets: [shift.pop()]
             },
             options: {
                 legend: { display: true },

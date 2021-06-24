@@ -49,11 +49,12 @@ function ISPFunction(){
     function filterPieFunction(){
         pieData = filterGraphFunction(searchValue)
         pieDataG = []
+        var slow = 0
+        var fast = 0
+        var normal = 0
+        var supper = 0
         const pieDataf = pieData.filter(elem => {
-            var slow = 0
-            var fast = 0
-            var normal = 0
-            var supper = 0
+            
 
             elem.speed.forEach(element => {
                 if (element == 25){
