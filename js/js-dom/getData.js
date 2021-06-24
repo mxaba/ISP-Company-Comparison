@@ -122,6 +122,8 @@ function showGrapth() {
         });
     }
 
+    document.getElementById('seachGra').value = ''
+
 }
 
 
