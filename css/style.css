@@ -17,10 +17,11 @@ body {
 } */
 
 .logo {
-    height: 101px;
-    width: 116px;
+    height: auto;
+    width: 20vh;
     float: left;
     padding-right: 30px;
+    margin-top: 1%;
 }
 
 .topnav {
