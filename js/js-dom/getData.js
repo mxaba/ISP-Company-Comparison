@@ -150,7 +150,7 @@ addDataElement.addEventListener('click', () => {
         instanceFun.addDataFunction(objectSet)
         localStorage.setItem("graph", JSON.stringify(instanceFun.getDataCapured()));
         alert("Data captured Successful 🧑🏾‍💻Thank you🤝")
-        // location.reload()
+        location.reload()
     } else {
         alert("Please make sure all the fields are selected!")
     }
