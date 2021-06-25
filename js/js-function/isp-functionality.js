@@ -95,7 +95,57 @@ function ISPFunction() {
                     label: elem.companyName + ' @ ' + elem.location,
                     data: [slow, fast, normal, supper],
                     backgroundColor: [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()],
-                    hoverOffset: 10
+                    hoverOffset: 10,
+                    fill: true,
+                    // borderColor: getRandomColor(),
+                    // pointBackgroundColor: getRandomColor(),
+                    // pointBorderColor: getRandomColor(),
+                    // pointHoverBackgroundColor: getRandomColor(),
+                    // pointHoverBorderColor: getRandomColor()
+                })
+
+            }
+            return ''
+        })
+        return pieDataG
+    }
+
+
+    function filterRadarFunction() {
+        pieData = filterGraphFunction(searchValue, searchValueNet)
+        pieDataG = []
+        var slow = 0
+        var fast = 0
+        var normal = 0
+        var supper = 0
+        const pieDataf = pieData.filter(elem => {
+
+
+            elem.speed.forEach(element => {
+                if (element == 25) {
+                    slow++
+                } if (element == 50) {
+                    fast++
+                } if (element == 100) {
+                    normal++
+                }
+                if (element == 200) {
+                    supper++
+                }
+            });
+
+            if (elem.location.toLowerCase().includes(searchValueNet) && elem.companyName.toLowerCase().includes(searchValue)) {
+                pieDataG.push({
+                    label: elem.companyName + ' @ ' + elem.location,
+                    data: [slow, fast, normal, supper],
+                    backgroundColor: getRandomColor(),
+                    hoverOffset: 10,
+                    fill: true,
+                    borderColor: getRandomColor(),
+                    pointBackgroundColor: getRandomColor(),
+                    pointBorderColor: getRandomColor(),
+                    pointHoverBackgroundColor: getRandomColor(),
+                    pointHoverBorderColor: getRandomColor()
                 })
 
             }
@@ -169,6 +219,7 @@ function ISPFunction() {
         setValueOfPie,
         filterPieFunction,
         addISPDataFunction,
-        setCompanyData
+        setCompanyData,
+        filterRadarFunction
     }
 }

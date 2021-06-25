@@ -105,6 +105,31 @@ function showGrapth() {
             }
         });
     }
+
+    if(seachGra != "" && seachGraPla != "" && instanceFun.filterGraphFunction(seachGra, seachGraPla).length != 0) {
+        instanceFun.setValueOfPie(seachGra, seachGraPla)
+        var shift = instanceFun.filterRadarFunction()
+        new Chart("myChart2", {
+            type: "radar",
+            data: {
+                labels: xValues,
+                datasets: [shift.pop()]
+            },
+            options: {
+                elements: {
+                    line: {
+                      borderWidth: 3
+                    }
+                  },
+                legend: { display: true },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'This is the user feedback of ' + seachGra.toUpperCase() + ' @ ' + seachGraPla.toUpperCase() + ' at diferent times of the day'
+                }
+            }
+        });
+    }
     document.getElementById('seachGra').value = ""
     document.getElementById('seachGraPla').value = ""
 }
