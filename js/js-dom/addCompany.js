@@ -18,15 +18,13 @@ submit.addEventListener('click', () => {
     const price = document.getElementById('price').value
     const coverage = document.getElementById('coverage').value
     const date = document.getElementById('date').value
-    const users = document.getElementById('users').value
     const installation = document.getElementById('installation').value
     const suburbs = document.getElementById('suburbs').value
     const data = document.getElementById('data').value
 
     const objectSet = {}
-    console.log(cname, speed, price, coverage, date, users, installation, suburbs)
     console.log(cname)
-    if(cname !== "" && speed !== "" && price !== "" && coverage !== "" && date !== "" && users !== "" && installation !== "" && suburbs !== ""){
+    if(cname !== "" && speed !== "" && price !== "" && coverage !== "" && date !== "" && installation !== "" && suburbs !== ""){
         objectSet.companyName = cname
         objectSet.speed = speed
         objectSet.price = price
