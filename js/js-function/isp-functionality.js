@@ -140,7 +140,7 @@ function ISPFunction() {
                     data: [slow, fast, normal, supper],
                     backgroundColor: getRandomColor(),
                     hoverOffset: 10,
-                    fill: true,
+                    fill: false,
                     borderColor: getRandomColor(),
                     pointBackgroundColor: getRandomColor(),
                     pointBorderColor: getRandomColor(),
