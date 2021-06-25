@@ -112,7 +112,7 @@ function showGrapth() {
         new Chart("myChart2", {
             type: "radar",
             data: {
-                labels: xValues,
+                labels: xValuesMbps,
                 datasets: [shift.pop()]
             },
             options: {
@@ -124,8 +124,7 @@ function showGrapth() {
                 legend: { display: true },
                 responsive: true,
                 title: {
-                    display: true,
-                    text: 'This is the user feedback of ' + seachGra.toUpperCase() + ' @ ' + seachGraPla.toUpperCase() + ' at diferent times of the day'
+                    display: false
                 }
             }
         });
