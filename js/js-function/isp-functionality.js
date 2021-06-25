@@ -138,18 +138,24 @@ function ISPFunction() {
     }
 
     function addISPDataFunction(objectPassed) {
-        companyData.push({
-            companyName: objectPassed.companyName,
-            speed: objectPassed.speed,
-            price: objectPassed.price,
-            data: objectPassed.data,
-            coverage: objectPassed.coverage,
-            date: objectPassed.date,
-            users: genUsers(),
-            router: objectPassed.router,
-            color: 'green',
-            area: objectPassed.area,
-        })
+
+        const exist = companyData.filter((data) => objectPassed.companyName.toLowerCase() == data.companyName.toLowerCase());
+        if (exist.length == 0) {
+            companyData.push({
+                companyName: objectPassed.companyName,
+                speed: objectPassed.speed,
+                price: objectPassed.price,
+                data: objectPassed.data,
+                coverage: objectPassed.coverage,
+                date: objectPassed.date,
+                users: genUsers(),
+                router: objectPassed.router,
+                color: 'green',
+                area: objectPassed.area,
+            })
+            return true
+        }
+        
     }
 
     return {

@@ -100,7 +100,7 @@ function showGrapth() {
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'This is the speed for ' + seachGra.toUpperCase() + ' at different times of the day'
+                    text: 'This is the user feedback of ' + seachGra.toUpperCase() + ' @ ' + seachGraPla.toUpperCase() + ' at diferent times of the day'
                 }
             }
         });

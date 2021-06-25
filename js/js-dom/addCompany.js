@@ -36,9 +36,13 @@ submit.addEventListener('click', () => {
         objectSet.users = genUsers()
         objectSet.router = installation
         objectSet.area = suburbs
-        instanceFun.addISPDataFunction(objectSet)
-        localStorage.setItem("dataset", JSON.stringify(instanceFun.getCompanyData()));
-        alert("Data captured Successful 🧑🏾‍💻Thank you🤝")
+        if(instanceFun.addISPDataFunction(objectSet)){
+            localStorage.setItem("dataset", JSON.stringify(instanceFun.getCompanyData()));
+            alert("Data captured Successful 🧑🏾‍💻Thank you🤝")
+        } else {
+            alert("❌ Company "+ cname +" already exist ❌")
+        }
+        
     } else {
         alert("Please make sure all the fields are entered❌")
     }
